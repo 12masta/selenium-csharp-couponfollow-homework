@@ -17,11 +17,5 @@ namespace TestFramework.PageObjects.ExternalSitePage
             this.wait = wait;
             this.webElementComposer = webElementComposer;
         }
-
-        public ExternalSitePage(IDriverWrapper driverWrapper, IWait wait, IWebElementComposer webElementComposer, string path) : base(driverWrapper, path)
-        {
-            this.wait = wait;
-            this.webElementComposer = webElementComposer;
-        }
     }
 }

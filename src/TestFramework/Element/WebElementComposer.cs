@@ -46,24 +46,6 @@ namespace TestFramework.Element
             }
         }
 
-        public bool IsDisplayed(By by)
-        {
-            try
-            {
-                return driverWrapper.FindElement(by).Displayed;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        public bool Selected(IWebElement webElement)
-        {
-            highliter.HighlightElement(webElement);
-            return webElement.Selected;
-        }
-
         public IWebElementComposer SendKeys(IWebElement webElement, string text)
         {
             highliter.HighlightElement(webElement);

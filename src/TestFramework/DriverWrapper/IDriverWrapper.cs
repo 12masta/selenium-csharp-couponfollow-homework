@@ -7,7 +7,6 @@ namespace TestFramework.DriverWrapper
     {
         string BaseUrl { get; }
         IWebDriver Driver { get; }
-        IDriverWrapper Load();
         IDriverWrapper Load(string path);
         string Url();
         void Dispose();

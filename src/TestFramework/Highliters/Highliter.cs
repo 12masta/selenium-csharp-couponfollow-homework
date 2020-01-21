@@ -12,13 +12,6 @@ namespace TestFramework.Highliters
             this.driverWrapper = driverWrapper;
         }
 
-        public IHighliter HighlightElement(By by)
-        {
-            var webElement = driverWrapper.FindElement(by);
-            HighlightElement(webElement);
-            return this;
-        }
-
         public IHighliter HighlightElement(IWebElement webElement)
         {
             ((IJavaScriptExecutor)driverWrapper.Driver).ExecuteScript("arguments[0].setAttribute('style','border: 2px solid red;');", webElement);

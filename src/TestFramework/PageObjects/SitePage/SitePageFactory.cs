@@ -17,11 +17,6 @@ namespace TestFramework.PageObjects.SitePage
             this.webElementComposer = webElementComposer;
         }
 
-        public ISitePage Create()
-        {
-            return new SitePage(driverWrapper, wait, webElementComposer);
-        }
-
         public ISitePage Create(string path)
         {
             return new SitePage(driverWrapper, wait, webElementComposer, path);

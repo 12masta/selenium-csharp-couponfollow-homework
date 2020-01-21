@@ -23,12 +23,6 @@ namespace TestFramework.Waits
 
         }
 
-        public IWait Until(TimeSpan timeSpan)
-        {
-            Thread.Sleep(timeSpan);
-            return this;
-        }
-
         public IWait UntilElementIsDisplayed(IWebElement searchList)
         {
             webDriverWait.Until(_ => webElementComposer.IsDisplayed(searchList) == true);
@@ -39,34 +33,6 @@ namespace TestFramework.Waits
         {
             webDriverWait.Timeout = timeSpan;
             UntilElementIsDisplayed(searchList);
-            webDriverWait.Timeout = defaultTimeout;
-            return this;
-        }
-
-        public IWait UntilElementIsNotDisplayed(IWebElement webElement)
-        {
-            webDriverWait.Until(_ => webElementComposer.IsDisplayed(webElement) == false);
-            return this;
-        }
-
-        public IWait UntilElementIsNotDisplayed(By by)
-        {
-            webDriverWait.Until(_ => webElementComposer.IsDisplayed(by) == false);
-            return this;
-        }
-
-        public IWait UntilElementIsNotDisplayed(By by, TimeSpan timeSpan)
-        {
-            webDriverWait.Timeout = timeSpan;
-            UntilElementIsNotDisplayed(by);
-            webDriverWait.Timeout = defaultTimeout;
-            return this;
-        }
-
-        public IWait UntilElementIsNotDisplayed(IWebElement webElement, TimeSpan timeSpan)
-        {
-            webDriverWait.Timeout = timeSpan;
-            UntilElementIsNotDisplayed(webElement);
             webDriverWait.Timeout = defaultTimeout;
             return this;
         }

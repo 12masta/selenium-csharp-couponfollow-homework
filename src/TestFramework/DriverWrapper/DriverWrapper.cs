@@ -21,12 +21,6 @@ namespace TestFramework.DriverWrapper
             this.driverConfiguration = driverConfiguration;
         }
 
-        public IDriverWrapper Load()
-        {
-            webDriver.Url = BaseUrl;
-            return this;
-        }
-
         public IDriverWrapper Load(string path)
         {
             webDriver.Url = BaseUrl + path;

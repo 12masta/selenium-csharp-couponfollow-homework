@@ -21,10 +21,5 @@ namespace TestFramework.PageObjects.ExternalSitePage
         {
             return new ExternalSitePage(driverWrapper, wait, webElementComposer);
         }
-
-        public IExternalSitePage Create(string path)
-        {
-            return new ExternalSitePage(driverWrapper, wait, webElementComposer, path);
-        }
     }
 }

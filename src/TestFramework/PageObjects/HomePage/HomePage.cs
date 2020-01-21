@@ -28,12 +28,6 @@ namespace TestFramework.PageObjects.HomePage
         private IWait wait;
         private IWebElementComposer webElementComposer;
 
-        public HomePage(IDriverWrapper driverWrapper, IWait wait, IWebElementComposer webElementComposer) : base(driverWrapper)
-        {
-            this.wait = wait;
-            this.webElementComposer = webElementComposer;
-        }
-
         public HomePage(IDriverWrapper driverWrapper, IWait wait, IWebElementComposer webElementComposer, string path) : base(driverWrapper, path)
         {
             this.wait = wait;
@@ -51,7 +45,7 @@ namespace TestFramework.PageObjects.HomePage
             wait.UntilElementIsDisplayed(SearchList);
             return webElementComposer.GetAttribute(SearchList.FindElements(By.TagName("li"))
                 .ElementAtOrDefault(v)
-                .FindElement(By.TagName("a")), "href");                
+                .FindElement(By.TagName("a")), "href");
         }
     }
 }

@@ -17,14 +17,9 @@ namespace TestFramework.PageObjects.HomePage
             this.webElementComposer = webElementComposer;
         }
 
-        public IHomePage Create()
-        {
-            return new HomePage(driverWrapper, wait, webElementComposer);
-        }
-
         public IHomePage Create(string path)
         {
-            return new HomePage(driverWrapper, wait, webElementComposer,  path);
+            return new HomePage(driverWrapper, wait, webElementComposer, path);
         }
     }
 }

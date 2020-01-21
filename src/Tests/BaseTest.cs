@@ -25,7 +25,10 @@ namespace Tests
             driverWrapper = new DriverWrapper(new ChromeDriver(driverConfig.DriverPath), driverConfig);
             highliter = new Highliter(driverWrapper);
             webElementComposer = new WebElementComposer(driverWrapper, highliter);
-            wait = new Wait(new WebDriverWait(driverWrapper.Driver, TimeSpan.FromSeconds(driverConfig.DefaultTimeout)), webElementComposer);
+            wait = new Wait(
+                new WebDriverWait(driverWrapper.Driver, TimeSpan.FromSeconds(driverConfig.DefaultTimeout)),
+                webElementComposer,
+                driverWrapper);
         }
 
         [TearDown]

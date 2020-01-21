@@ -2,6 +2,7 @@ using System;
 using TestFramework.Dto;
 using OpenQA.Selenium;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TestFramework.DriverWrapper
 {
@@ -53,6 +54,26 @@ namespace TestFramework.DriverWrapper
         public IList<IWebElement> FindElements(By by)
         {
             return webDriver.FindElements(by);
+        }
+
+        public IDriverWrapper SwitchToWindow(int v)
+        {
+            var window = Driver.WindowHandles.ElementAtOrDefault(v);
+            Driver.SwitchTo().Window(window);
+            return this;
+        }
+
+        public IDriverWrapper SwitchToCouponFollowWindow()
+        {
+            for (int i = 0; i < Driver.WindowHandles.Count; i++)
+            {
+                Driver.SwitchTo().Window(Driver.WindowHandles.ElementAtOrDefault(i));
+                if (Driver.Url.Contains(BaseUrl))
+                {
+                    break;
+                }
+            }
+            return this;
         }
     }
 }

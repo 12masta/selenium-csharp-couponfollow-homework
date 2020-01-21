@@ -7,12 +7,13 @@ namespace TestFramework.DriverWrapper
     {
         string BaseUrl { get; }
         IWebDriver Driver { get; }
-
         IDriverWrapper Load();
         IDriverWrapper Load(string path);
         string Url();
         void Dispose();
         IWebElement FindElement(By by);
         IList<IWebElement> FindElements(By by);
+        IDriverWrapper SwitchToWindow(int v);
+        IDriverWrapper SwitchToCouponFollowWindow();
     }
 }

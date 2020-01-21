@@ -9,6 +9,8 @@ namespace TestFramework.Waits
         IWait UntilElementIsNotDisplayed(By by);
         IWait UntilElementIsNotDisplayed(By by, TimeSpan timeSpan);
         IWait UntilElementIsDisplayed(IWebElement searchList);
+        IWait UntilElementIsDisplayed(IWebElement searchList, TimeSpan timeSpan);
         IWait Until(TimeSpan timeSpan);
+        IWait UntilWindowsCountIsHigherThan(int v);
     }
 }

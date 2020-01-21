@@ -27,6 +27,22 @@ namespace TestFramework.PageObjects.SitePage
             }
         }
 
+        private IWebElement CopyButton
+        {
+            get
+            {
+                return driverWrapper.FindElement(By.Id("copy-button"));
+            }
+        }
+
+        private IWebElement CouponCode
+        {
+            get
+            {
+                return driverWrapper.FindElement(By.Id("coupon-code"));
+            }
+        }
+
         private IWait wait;
         private IWebElementComposer webElementComposer;
 
@@ -60,6 +76,17 @@ namespace TestFramework.PageObjects.SitePage
         {
             driverWrapper.SwitchToWindow(0);
             return new ExternalSitePageFactory(driverWrapper, wait, webElementComposer).Create();
+        }
+
+        public ISitePage ClickCopyButton()
+        {
+            webElementComposer.Click(CopyButton);
+            return this;
+        }
+
+        public string GetCouponCodeText()
+        {
+            return webElementComposer.GetText(CouponCode);
         }
     }
 }

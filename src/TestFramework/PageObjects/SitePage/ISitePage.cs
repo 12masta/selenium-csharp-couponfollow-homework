@@ -8,5 +8,7 @@ namespace TestFramework.PageObjects.SitePage
         ISitePage ClickShowCouponCode(int v);
         bool IsModalDisplayed();
         IExternalSitePage SwitchToLinkedSiteTab();
+        ISitePage ClickCopyButton();
+        string GetCouponCodeText();
     }
 }

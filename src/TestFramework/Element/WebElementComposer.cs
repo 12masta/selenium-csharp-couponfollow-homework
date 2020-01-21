@@ -28,6 +28,12 @@ namespace TestFramework.Element
             return webElement.GetAttribute(attribute);
         }
 
+        public string GetText(IWebElement webElement)
+        {
+            highliter.HighlightElement(webElement);
+            return webElement.Text;
+        }
+
         public bool IsDisplayed(IWebElement webElement)
         {
             try

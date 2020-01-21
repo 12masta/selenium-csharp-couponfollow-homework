@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using TestFramework.Element;
@@ -17,6 +18,18 @@ namespace TestFramework.Waits
             this.webElementComposer = webElementComposer;
             defaultTimeout = webDriverWait.Timeout;
 
+        }
+
+        public IWait Until(TimeSpan timeSpan)
+        {
+            Thread.Sleep(timeSpan);
+            return this;
+        }
+
+        public IWait UntilElementIsDisplayed(IWebElement searchList)
+        {
+            webDriverWait.Until(_ => webElementComposer.IsDisplayed(searchList) == true);
+            return this;
         }
 
         public IWait UntilElementIsNotDisplayed(IWebElement webElement)

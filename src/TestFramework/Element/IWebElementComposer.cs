@@ -8,5 +8,7 @@ namespace TestFramework.Element
         bool IsDisplayed(IWebElement webElement);
         bool IsDisplayed(By by);
         bool Selected(IWebElement webElement);
+        IWebElementComposer SendKeys(IWebElement searchField, string text);
+        string GetAttribute(IWebElement webElement, string attribute);
     }
 }

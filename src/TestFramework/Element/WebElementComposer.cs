@@ -22,6 +22,12 @@ namespace TestFramework.Element
             return this;
         }
 
+        public string GetAttribute(IWebElement webElement, string attribute)
+        {
+            highliter.HighlightElement(webElement);
+            return webElement.GetAttribute(attribute);
+        }
+
         public bool IsDisplayed(IWebElement webElement)
         {
             try
@@ -50,6 +56,13 @@ namespace TestFramework.Element
         {
             highliter.HighlightElement(webElement);
             return webElement.Selected;
+        }
+
+        public IWebElementComposer SendKeys(IWebElement webElement, string text)
+        {
+            highliter.HighlightElement(webElement);
+            webElement.SendKeys(text);
+            return this;
         }
     }
 }

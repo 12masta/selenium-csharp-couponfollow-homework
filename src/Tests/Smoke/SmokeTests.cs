@@ -10,7 +10,7 @@ namespace Tests.Smoke
         public void Smoke()
         {
             //when
-            var homePage = new HomePageFactory(driverWrapper)
+            var homePage = new HomePageFactory(driverWrapper, wait, webElementComposer)
                 .Create("");
 
             //then
